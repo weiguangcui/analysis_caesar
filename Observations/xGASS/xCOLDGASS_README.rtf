@@ -1,0 +1,123 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1133\margr1133\margb1133\margt1133\vieww15820\viewh14320\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs20 \cf2 \expnd0\expndtw0\kerning0
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# 
+\b xCOLD GASS Data Release: Catalog description
+\b0 \
+#\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# 
+\b Identifiers and basic properties
+\b0  \
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+   ID			LONG		GASS catalog ID\
+   SDSS			STRING	SDSS name\
+   OBJID		LONG64	SDSS ObjID\
+   SPECOBJID		LONG64	SDSS SpecObjID\
+   PLATEID		INT		SDSS spectroscopic Plate ID\
+   MJD 			LONG		SDSS spectroscopic MJD ID\
+   FIBERID		INT		SDSS spectroscopic Fiber ID\
+   RA 			DOUBLE	RA from SDSS, J2000 [decimal degrees]\
+   DEC			DOUBLE	Dec from SDSS, J2000 [decimal degrees]\
+   Z_SDSS		FLOAT		SDSS spectroscopic redshift\
+   LUMDIST		FLOAT		Luminosity distance [Mpc] \
+					(Omega_m=0.3, Omega_L = 0.7, H0 = 70 km/s/Mpc)\
+   INCL            		FLOAT		Disc inclination [degrees]\
+   NUVR	       	FLOAT		NUV-r colour, corrected for Galactic extinction\
+   R50KPC          	FLOAT		SDSS r-band Petrosian R50[kpc]\
+   LOGMSTAR        	FLOAT    	Stellar mass [log Msun]\
+   LOGMUST         	FLOAT		Stellar mass surface density [log Msun/kpc^2]\
+					(calculated as log(mu*)=log(M*/(2*pi*r50_z^2)) )\
+   CINDX           		FLOAT     	Concentration index (ratio of r-band Petrosian R90 and R50)\
+   WEIGHT          	FLOAT    	Statistical weight\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# 
+\b Star formation rates and IR luminosity
+\b0   \
+# note:  All the SFRs are given in units of log(Msun/yr) and for a Chabrier IMF \
+#          We recommend the use of LOGSFR_BEST\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+   LOGSFR_MPAJHU	FLOAT		SFR from SDSS MPA/JHU catalog\
+   LOGSFR_SED	FLOAT        	SFR from UV+optical SED fitting \
+   LOGSFR_BEST 	FLOAT		SFR from WISE + GALEX when detected in both data sets\
+						else from SED fitting (see Janowiecki et al. 2017) \
+   LOGSFR_ERR	FLOAT		Error on LOGSFR_BEST\
+   FLAG_IRAS       	INT 		Detection flag in the IRAS PSC, 1:yes, 2:no\
+   LOGLIR_IRAS            FLOAT		Total IR luminosity [log Lsun]\
+   IRCOL_IRAS         	FLOAT     	IRAS colour (F60/F100)\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# 
+\b Spectral information
+\b0   \
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+   N2HA			FLOAT		log(FLUX_NII_6583/FLUX_Halpha_6562) \
+					(using fluxes from SDSS DR7)\
+   O3HB 		FLOAT         	log(FLUX_OIII_5006/FLUX_HBeta_4861)\
+					(using fluxes from SDSS DR7)\
+   AGNCLASS		INT		BPT-based AGN classification, -1:undetermined, 0:inactive, \
+					1:SFing, 2:Composite, 3:AGN, 4:Seyfert		\
+   Z_PP04_N2 		FLOAT		12+logO/H from N2Ha using Pettini&Pagel (2004)\
+   Z_PP04_O3N2  	FLOAT		12+logO/H from N2Ha and O3Hb using Pettini&Pagel (2004)\
+   Z_MZR		FLOAT		12+logO/H from MZR, Kewley&Ellison08, PP04 calibration\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# 
+\b IRAM Observations
+\b0   \
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+   FLAG_CO         	INT		CO(1-0) detection flag, 1:yes, 2:no\
+   XCO             		FLOAT		Constant Galactic CO-to-H2 conversion factor except for galaxies suspected of requiring the lower \'93merger\'94 value\
+   XCO_A17         	FLOAT		CO-to-H2 conversion function from Accurso et al. (2017)	\
+   XCO_A17_ERR     	FLOAT     	Error on XCO_A17\
+   ICO             		FLOAT     	CO(1-0) line flux [K km/s]\
+   ICO_ERR         	FLOAT		Error on ICO [K km/s]\
+   ICO_COR         	FLOAT		CO(1-0) line flux, aperture corrected [K km/s]\
+   ICO_COR_ERR     	FLOAT		Error on ICO_COR [K km/s]\
+   LCO             		FLOAT		CO(1-0) line luminosity [K km/s pc^2]\
+					(if FLAG_CO=2, then this is a 3sigma upper limit)\
+   LCO_ERR         	FLOAT		Error on LCO [K km/s pc^2]\
+   LCO_COR         	FLOAT		CO(1-0) line luminosity, aperture corrected [K km/s pc^2]\
+					(if FLAG_CO=2, then this is a 3sigma upper limit)\
+   LCO_COR_ERR 	FLOAT		Error on LCO_COR [K km/s pc^2] \
+   RMS_CO          	FLOAT		Rms noise around the CO(1-0) line in 20km/s-wide channels [K]\
+   SN_CO           	FLOAT     	Integrated S/N of the CO(1-0) line \
+   WCO             		FLOAT		FWHM of the CO(1- 0) line [km/s]\
+   WCO_FLAG        	INT		Quality flag for WCO, 1:high quality, 2: acceptable, 3: poor \
+   Z_CO            		FLOAT		Redshift based on the velocity of the CO(1-0) line\
+   WCO_TFR         	FLOAT		FWHM of the CO(1-0) for TFR work from Tiley et al. (2016) [km/s]\
+   WCO_TFR_ERR     	FLOAT 		Error on WCO_TFR\
+   LOGMH2          	FLOAT    	Total molecular gas mass [log Msun]\
+   LOGMH2_ERR      	FLOAT		Error on LOGMH2\
+   LIMLOGMH2       	FLOAT    	3sigma upper limit for LOGMH2, if FLAG_CO=2\
+   LOGMH2MS        	FLOAT    	Molecular gas mass fraction [log MH2/M*]\
+   FLAG_CO21       	INT		CO(2-1) detection flag, 1:yes, 2:no, 0:not observed\
+   ICO21           		FLOAT 		CO(2-1) line flux [K km/s]\
+   ICO21_ERR       	FLOAT     	Error on ICO21 [K km/s]\
+   LCO21           		FLOAT		CO(2-1) line luminosity [K km/s pc^2]\
+					(if FLAG_CO21=2, then this is a 3sigma upper limit)		\
+   LCO21_ERR       	FLOAT    	Error on LCO21 [K km/s pc^2]\
+   RMS_CO21        	FLOAT     	Rms noise around the CO(2-1) line in 20km/s-wide channels [K]\
+   SN_CO21         	FLOAT		Integrated S/N of the CO(2-1) line\
+   WCO21           	FLOAT		FWHM of the CO(2-1) line [km/s]\
+   WCO21_FLAG      	INT		Quality flag for WCO21, 1:high quality, 2: acceptable, 3: poor\
+   Z_CO21          	FLOAT		Redshift based on the velocity of the CO(2-1) line\
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#\
+# 
+\b APEX CO(2-1) Observations
+\b0   \
+# \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97#	\
+   FLAG_APEX       	INT       		CO(2-1) detection flag, 1:yes, 2:no, 0:not observed\
+   ICO_APEX        	FLOAT		CO(2-1) line flux [K km/s]\
+   LCO_APEX        	FLOAT		CO(2-1) line luminosity [K km/s pc^2]\
+   RMS_APEX        	FLOAT		Rms noise around the CO(2-1) line in 20km/s-wide channels [K]\
+   SN_APEX         	FLOAT    	Integrated S/N of the CO(2-1) line\
+   WCO_APEX        	FLOAT    	FWHM of the CO(2-1) line [km/s]\
+   ZCO_APEX        	FLOAT		Redshift based on the velocity of the CO(2-1) line}

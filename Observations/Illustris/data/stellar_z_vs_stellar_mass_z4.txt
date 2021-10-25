@@ -1,0 +1,4 @@
+# stellar mass metallicity relation data  
+# col1 = stellar mass (in solar masses) 
+# col2 = avg stellar metallicity of all stars in the subhalo 
+

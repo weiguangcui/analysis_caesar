@@ -1,0 +1,9 @@
+These are subdivided by redshift, as compiled by
+Katsianis+17b MNRAS 472 919
+Katsianis+17a MNRAS 464 4977
+The format is
+DataType  Redshift  SFR  Phi  dPhi_hi  dPhi_lo factor
+
+DataType=0 for UV, 1 for Halpha, 2 for IR
+factor multiples Phi, dPhi_hi, and dPhi_lo
+

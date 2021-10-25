@@ -1,0 +1,68 @@
+# StellarMasses
+# StellarMasses
+# v08
+# 2012-12-07
+# Edward Taylor <ent@physics.usyd.edu.au>
+#
+# This table provides stellar masses, restframe photometry, and other
+# ancillary stellar population parameters from stellar population fits
+# to ugriz SEDs for all z < 0.65 galaxies in the GAMA DR2 sample.
+#
+CATAID           1	-	meta.id;meta.main		Unique ID of GAMA object
+Z                2 	-	src.redshift			Heliocentric redshift
+nQ               3 	-	meta.code.qual;src.redshift 	Normalised redshift quality (use nQ > 2 for science)
+SURVEY_CODE      4 	-	meta.code;meta.dataset		Redshift source flag (5=GAMA; 1=SDSS)
+Z_TONRY          5 	-	src.redshift			Flow corrected redshift using Tonry et al. model
+fluxscale        6 	-	arith.factor			Aperture correction factor for scaling total luminosities and stellar masses (see notes)
+zmax_19p4        7 	-	src.redshift;stat.max		Maximum redshift for which r_petro <= 19.4 (G09/G15 SURVEY_CLASS>=6 selection)
+zmax_19p8        8 	-	src.redshift;stat.max		Maximum redshift for which r_petro <= 19.8 (G12 SURVEY_CLASS>=6 selection)
+zmax_17p88       9 	-	src.redshift;stat.max		Maximum redshift for which r_petro <= 17.8 (SDSS main survey selection)
+nbands          10 	-	meta.number			Number of bands used in SPS fits (max. is 5; NIR data have not been used)
+logmstar        11 	dex	phys.mass            		Stellar mass within the photometric aperture represented as log10(M_*/[M_Sol]) (see notes)
+dellogmstar     12 	dex	stat.error			Formal uncertainty on logmstar
+logmoverl_i     13 	dex	phys.composition.massLightRatio Mass-to-light ratio (restframe i-band) represented as log10( (M_*/L_i) / [M_Sol/L_Sol,i] )
+dellogmoverl_i  14 	dex	stat.error			Formal uncertainty on logmoverl_i
+logage          15 	dex	time.age			SPS age T = t(z_obs) - t(z_form), represented as log10(T/[yr])
+dellogage       16 	dex	stat.error			Formal uncertainty on logage
+logtau          17 	dex	time.scale			SPS e-folding time for the exponentially declining SFH, represented as log10(tau/[yr])
+dellogtau       18 	dex	stat.error			Formal uncertainty on logtau
+metal           19 	-	phys.abund.Z			SPS stellar metallicity (Z_Sol = 0.02)
+delmetal        20 	-	stat.error			Formal uncertainty on metal
+extBV           21 	mag	phys.absorption			SPS dust obscuration; for Calzetti et al. (2003) dust A_V = 3.1 x E(B-V)
+delextBV        22 	mag	stat.error			Formal uncertainty on extBV
+logLWage        23 	dex	time.age			Restframe i-band luminosity weighted mean stellar age, represented as log10(t*/[yr])
+dellogLWage     24 	dex	stat.error			Formal uncertainty on logLWage
+gminusi         25 	mag	phot.color			Restframe (g-i) colour from SED fit
+delgminusi      26 	mag	stat.error			Formal uncertainty on gminusi
+uminusr         27 	mag	phot.color			Restframe (u-r) colour from SED fit
+deluminusr      28 	mag	stat.error			Formal uncertainty on uminusr
+gminusi_stars   29 	mag	phot.color			Intrinsic, stellar (g-i) colour from SED fit, i.e. corrected for internal dust obscuration
+uminusr_stars   30 	mag	phot.color			Intrinsic, stellar (u-r) colour from SED fit, i.e. corrected for internal dust obscuration
+C_logM_ur       31 	-	stat.correlation		Correlation coefficient between logmstar and uminusi for covariant error matrix
+C_logM_gi       32 	-	stat.correlation		Correlation coefficient between logmstar and gminusi for covariant error matrix
+C_logM_eBV      33 	-	stat.correlation		Correlation coefficient between logmstar and extBV for covariant error matrix
+fitphot_u       34 	mag	phot.mag			Best-fit observers' frame u-band apparent magnitude from SPS SED fits
+delfitphot_u    35 	mag	stat.error			Formal uncertainty in fitphot_u
+absmag_u        36 	mag	phys.magAbs			Absolute magnitude in restframe u-band from SPS SED fits
+delabsmag_u     37 	mag	stat.error			Formal uncertainty in absmag_u
+absmag_u_stars	38 	mag	phys.magAbs			Intrinsic abs. mag. of all stellar emission (i.e. corrected for internal dust extinction) in restframe u-band
+fitphot_g       39 	mag	phot.mag			Best-fit observers' frame g-band apparent magnitude from SPS SED fits
+delfitphot_g    40 	mag	stat.error			Formal uncertainty in fitphot_g
+absmag_g        41 	mag	phys.magAbs			Absolute magnitude in restframe g-band from SPS SED fits
+delabsmag_g     42 	mag	stat.error			Formal uncertainty in absmag_g
+absmag_g_stars  43 	mag	phys.magAbs			Intrinsic abs. mag. of all stellar emission (i.e. corrected for internal dust extinction) in restframe g-band
+fitphot_r       44 	mag	phot.mag			Best-fit observers' frame r-band apparent magnitude from SPS SED fits
+delfitphot_r    45 	mag	stat.error			Formal uncertainty in fitphot_r
+absmag_r        46 	mag	phys.magAbs			Absolute magnitude in restframe r-band from SPS SED fits
+delabsmag_r     47 	mag	stat.error			Formal uncertainty in absmag_r
+absmag_r_stars  48 	mag	phys.magAbs			Intrinsic abs. mag. of all stellar emission (i.e. corrected for internal dust extinction) in restframe r-band
+fitphot_i       49 	mag	phot.mag			Best-fit observers' frame i-band apparent magnitude from SPS SED fits
+delfitphot_i    50 	mag	stat.error			Formal uncertainty in fitphot_i
+absmag_i        51 	mag	phys.magAbs			Absolute magnitude in restframe i-band from SPS SED fits
+delabsmag_i     52 	mag	stat.error			Formal uncertainty in absmag_i
+absmag_i_stars  53 	mag	phys.magAbs			Intrinsic abs. mag. of all stellar emission (i.e. corrected for internal dust extinction) in restframe i-band
+fitphot_z       54 	mag	phot.mag			Best-fit observers' frame z-band apparent magnitude from SPS SED fits
+delfitphot_z    55 	mag	stat.error			Formal uncertainty in fitphot_z
+absmag_z        56 	mag	phys.magAbs			Absolute magnitude in restframe z-band from SPS SED fits
+delabsmag_z     57 	mag	stat.error			Formal uncertainty in absmag_z
+absmag_z_stars  58 	mag	phys.magAbs			Intrinsic abs. mag. of all stellar emission (i.e. corrected for internal dust extinction) in restframe z-band
